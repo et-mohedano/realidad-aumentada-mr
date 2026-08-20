@@ -280,8 +280,8 @@ def add_bitmap_text(text, target_width, center_y, front_z, color, depth=0.10, na
                     idx+=1
 
 # stacked floating title; all geometry is symmetric around x=0
-add_bitmap_text('2DO INFORME', 3.35, 9.55, 0.22, GOLD, depth=0.11, name='txt_informe')
-add_bitmap_text('2026', 1.55, 8.98, 0.24, TRIM, depth=0.12, name='txt_2026')
+add_bitmap_text('2DO INFORME', 3.35, 10.25, 0.22, GOLD, depth=0.11, name='txt_informe')
+add_bitmap_text('2026', 1.55, 9.62, 0.24, TRIM, depth=0.12, name='txt_2026')
 
 # ---------- global center/scale for AR ----------
 # Keep x/z centered, floor y=0, total height including text ~2.25 m
