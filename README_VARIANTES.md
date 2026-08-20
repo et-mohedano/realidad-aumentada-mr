@@ -18,3 +18,16 @@ Este paquete incluye:
 ## Nota
 
 La variante 2 incluida aquí es un **render visual de referencia**. Si después quieres, el siguiente paso sería convertir esta variante del reloj en un modelo 3D real (`.glb`) para integrarlo al visor AR igual que la variante 1.
+
+## Nuevo visor AR de variantes
+
+Se agregó el archivo:
+
+- `ar_variantes.html`
+
+Este visor permite alternar entre:
+
+1. **Variante 1 · Logotipo**
+2. **Variante 2 · Reloj monumento**
+
+Y abrir cualquiera de las dos en realidad aumentada desde un celular compatible.

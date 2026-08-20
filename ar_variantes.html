@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#5C1522" />
+  <title>Variantes AR · Mineral de la Reforma</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+  <style>
+    :root{--vino:#7B1D2E;--vino-d:#5C1522;--vino-m:#9B2540;--dorado:#CBAA80;--ink:#1D1917;--muted:#746D67}
+    *{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Inter,system-ui,sans-serif;background:#efe8e1;color:var(--ink)}
+    body{min-height:100dvh;background:radial-gradient(circle at 85% 10%,rgba(203,170,128,.35),transparent 28%),radial-gradient(circle at 10% 85%,rgba(123,29,46,.16),transparent 30%),linear-gradient(145deg,#f8f5f2,#eee8e3 58%,#e6ddd7)}
+    .wrap{max-width:1280px;margin:0 auto;padding:20px;display:grid;grid-template-rows:auto auto 1fr auto;min-height:100dvh;gap:14px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px}.brand img{width:46px;height:46px;border-radius:12px;background:#fff;padding:5px;box-shadow:0 10px 28px rgba(0,0,0,.08)}
+    .eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--vino-m)}
+    h1{margin:2px 0 0;font-size:clamp(1.1rem,3vw,1.35rem)}
+    .badge{padding:8px 12px;border-radius:999px;border:1px solid rgba(123,29,46,.12);background:rgba(255,255,255,.6);font-size:.7rem;font-weight:800;color:var(--vino)}
+    .switcher{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid rgba(123,29,46,.13);background:rgba(255,255,255,.72);color:var(--vino-d);font:inherit;font-size:.84rem;font-weight:800;padding:12px 16px;border-radius:14px;cursor:pointer;transition:.18s}
+    .btn.active{background:linear-gradient(135deg,var(--vino-d),var(--vino-m));color:#fff;box-shadow:0 10px 25px rgba(123,29,46,.26)}
+    .grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;min-height:0}
+    .viewer{position:relative;min-height:460px;height:min(70dvh,760px);border-radius:28px;overflow:hidden;background:linear-gradient(155deg,rgba(255,255,255,.92),rgba(255,255,255,.57));border:1px solid rgba(92,21,34,.1);box-shadow:0 34px 90px rgba(67,39,31,.18)}
+    model-viewer{width:100%;height:100%;background:transparent;--poster-color:transparent;--progress-bar-color:var(--vino);--progress-bar-height:3px}
+    .note,.hint{position:absolute;left:18px;z-index:4;background:rgba(255,255,255,.8);border:1px solid rgba(123,29,46,.12);border-radius:999px;padding:8px 12px;font-size:.7rem;font-weight:760;color:#61554f;backdrop-filter:blur(10px)}
+    .note{top:18px}.hint{bottom:18px;left:50%;transform:translateX(-50%);background:rgba(38,29,26,.72);border:0;color:#fff}
+    .ar-button{position:absolute;right:18px;bottom:18px;z-index:5;border:0;border-radius:16px;padding:14px 18px;background:linear-gradient(135deg,var(--vino-d),var(--vino-m));color:#fff;font:inherit;font-size:.82rem;font-weight:900;box-shadow:0 12px 30px rgba(123,29,46,.28);cursor:pointer;display:flex;align-items:center;gap:8px}
+    .ar-prompt{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);z-index:5;background:rgba(255,255,255,.94);padding:10px 14px;border-radius:14px;font-size:.72rem;font-weight:750;color:var(--vino-d);box-shadow:0 10px 30px rgba(0,0,0,.12);white-space:nowrap}
+    .side{display:flex;flex-direction:column;gap:14px}
+    .card{background:rgba(255,255,255,.82);border:1px solid rgba(92,21,34,.1);border-radius:22px;padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.08)}
+    .card h2{margin:0 0 10px;font-size:1rem;color:var(--vino-d)}
+    .card p,.card li{color:var(--muted);line-height:1.6;font-size:.92rem}
+    .steps{margin:0;padding-left:1rem}.primary{appearance:none;border:0;border-radius:14px;padding:13px 18px;font:inherit;font-weight:850;font-size:.84rem;cursor:pointer;background:linear-gradient(135deg,var(--vino-d),var(--vino-m));color:#fff;box-shadow:0 10px 25px rgba(123,29,46,.26)}
+    footer{font-size:.67rem;color:#817872;padding:0 4px 6px}
+    @media(max-width:960px){.grid{grid-template-columns:1fr}.viewer{height:min(58dvh,620px)} }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <img src="assets/logo_transparente.png" alt="Logo" />
+      <div>
+        <div class="eyebrow">Realidad aumentada</div>
+        <h1>Mineral de la Reforma · Variantes 3D</h1>
+      </div>
+    </div>
+    <div class="badge">2 modelos con AR</div>
+  </div>
+
+  <div class="switcher">
+    <button class="btn active" data-model="logo">Variante 1 · Logotipo</button>
+    <button class="btn" data-model="reloj">Variante 2 · Reloj monumento</button>
+  </div>
+
+  <div class="grid">
+    <section class="viewer">
+      <div class="note">Arrastra para explorar · pellizca para acercar</div>
+      <model-viewer id="viewer"
+        src="assets/logo_mr_3d.glb"
+        poster="assets/logo_transparente.png"
+        alt="Variante 1: logotipo tridimensional"
+        camera-controls touch-action="pan-y" autoplay animation-name="Giro360"
+        shadow-intensity="1.2" shadow-softness="0.8" exposure="1.05"
+        environment-image="neutral" camera-orbit="18deg 78deg 1.15m"
+        min-camera-orbit="auto 55deg 0.72m" max-camera-orbit="auto 105deg 1.8m"
+        ar ar-modes="webxr scene-viewer quick-look" ar-placement="floor" ar-scale="auto">
+        <button class="ar-button" slot="ar-button" aria-label="Ver en realidad aumentada"><span>◈</span> Ver en realidad aumentada</button>
+        <div class="ar-prompt" slot="ar-prompt">Mueve el teléfono para detectar una superficie</div>
+      </model-viewer>
+      <div class="hint" id="hint">El logotipo gira automáticamente en 3D</div>
+    </section>
+
+    <aside class="side">
+      <section class="card">
+        <h2 id="title">Variante 1 · Logotipo institucional</h2>
+        <p id="desc">Versión original del símbolo institucional convertido a geometría 3D. Incluye animación de giro continua y puede colocarse en una superficie mediante realidad aumentada.</p>
+        <button class="primary" id="open-ar">Abrir AR</button>
+      </section>
+      <section class="card">
+        <h2>Cómo usarlo</h2>
+        <ol class="steps">
+          <li>Abre esta página desde tu celular.</li>
+          <li>Elige la variante que quieres ver.</li>
+          <li>Toca <b>Abrir AR</b> o el botón del visor.</li>
+          <li>Apunta a una mesa o al piso para colocar el modelo.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>Nota</h2>
+        <p>La variante 2 es una aproximación 3D funcional para visualización en AR basada en tus fotos de referencia del reloj monumento municipal.</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer>Prototipo WebAR · <b>ar_variantes.html</b> · modelos GLB incluidos</footer>
+</div>
+<script>
+const viewer = document.getElementById('viewer');
+const hint = document.getElementById('hint');
+const title = document.getElementById('title');
+const desc = document.getElementById('desc');
+const buttons = document.querySelectorAll('.btn');
+const MODELS = {
+  logo: {
+    src: 'assets/logo_mr_3d.glb',
+    poster: 'assets/logo_transparente.png',
+    alt: 'Variante 1: logotipo tridimensional',
+    orbit: '18deg 78deg 1.15m',
+    minOrbit: 'auto 55deg 0.72m',
+    maxOrbit: 'auto 105deg 1.8m',
+    title: 'Variante 1 · Logotipo institucional',
+    desc: 'Versión original del símbolo institucional convertido a geometría 3D. Incluye animación de giro continua y puede colocarse en una superficie mediante realidad aumentada.',
+    hint: 'El logotipo gira automáticamente en 3D',
+    animationName: 'Giro360'
+  },
+  reloj: {
+    src: 'assets/reloj_monumento_ar.glb',
+    poster: 'assets/variantes/variante_2_reloj_monumento.png',
+    alt: 'Variante 2: reloj monumento municipal en 3D',
+    orbit: '28deg 78deg 2.8m',
+    minOrbit: 'auto 55deg 1.6m',
+    maxOrbit: 'auto 100deg 4m',
+    title: 'Variante 2 · Reloj monumento',
+    desc: 'Modelo 3D aproximado del reloj monumento del municipio, basado en tus fotografías de referencia. También puede abrirse en realidad aumentada para verlo en el espacio.',
+    hint: 'Ahora estás viendo el reloj monumento en 3D',
+    animationName: ''
+  }
+};
+function setModel(key){
+  const m = MODELS[key];
+  buttons.forEach(b => b.classList.toggle('active', b.dataset.model === key));
+  viewer.src = m.src;
+  viewer.poster = m.poster;
+  viewer.alt = m.alt;
+  viewer.setAttribute('camera-orbit', m.orbit);
+  viewer.setAttribute('min-camera-orbit', m.minOrbit);
+  viewer.setAttribute('max-camera-orbit', m.maxOrbit);
+  if (m.animationName) viewer.setAttribute('animation-name', m.animationName); else viewer.removeAttribute('animation-name');
+  title.textContent = m.title;
+  desc.textContent = m.desc;
+  hint.textContent = m.hint;
+  try { if (m.animationName) { viewer.currentTime = 0; viewer.play({repetitions: Infinity}); } else { viewer.pause(); } } catch(e){}
+}
+buttons.forEach(btn => btn.addEventListener('click', () => setModel(btn.dataset.model)));
+document.getElementById('open-ar').addEventListener('click', async () => {
+  try { await viewer.activateAR(); } catch(e) { alert('La realidad aumentada no está disponible en este navegador o dispositivo.'); }
+});
+viewer.addEventListener('load',()=>{ try { if (viewer.getAttribute('animation-name')) viewer.play({repetitions: Infinity}); } catch(e){} });
+</script>
+</body>
+</html>
